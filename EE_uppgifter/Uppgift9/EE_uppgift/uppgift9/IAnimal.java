@@ -1,9 +1,14 @@
-package EE_uppgift.uppgift8;
+package EE_uppgift.uppgift9;
 
 /**
- * 🧬 IAnimal är ett grundinterface för alla djur.
+ * IAnimal är ett grundinterface för alla djur.
+ * Här definieras metoder som alla djur måste ha.
  */
 public sealed interface IAnimal permits IMammal, IReptile {
+
+    // Alla djur ska kunna göra ett ljud
     void makeSound();
-    void introduce(); // 👈 Lägg till denna metod här
+
+    // Alla djur ska kunna presentera sig
+    void introduce();
 }

@@ -1,11 +1,11 @@
-package EE_uppgift.uppgift8;
+package EE_uppgift.uppgift9;
 
 /**
- * 🐾 IMammal representerar alla däggdjur och ärver från IAnimal.
- * Tillåter specifika klasser enligt sealed interface-regler.
+ * IMammal representerar däggdjur.
+ * Endast Cat och Dog får implementera detta interface.
  */
-public sealed interface IMammal extends IAnimal
-        permits Cat, Dog, Bear, Fox, Elephant {
+public sealed interface IMammal extends IAnimal permits Cat, Dog {
 
+    // Extra metod för däggdjur (kan användas om man vill)
     void introduce();
 }

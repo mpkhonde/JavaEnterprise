@@ -1,83 +1,33 @@
 package EE_uppgift.Uppgift4;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
+// Uppgift 4 - Här testar jag switch-sats och användarinmatning
+
 public class Uppgift4Main {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Frågar användaren efter sitt namn
-        System.out.print("Hej, Vad heter du? ");
-        String namn = scanner.nextLine();
-        System.out.println("Namn i person: " + namn);
+        // Frågar användaren vilket nummer på veckodagen de vill skriva ut
+        System.out.print("Skriv en siffra mellan 1-7 för att se veckodag: ");
+        int dag = scanner.nextInt();
 
-        // Frågar om användaren vill se veckodagar
-        System.out.print("Vill du skriva ut veckodagar? (ja/nej): ");
-        String svar = scanner.nextLine();
-
-        // Om användaren skriver "ja"
-        if (svar.equalsIgnoreCase("ja")) {
-            System.out.print("Skriv ett nummer mellan 1-7 (eller 'alla' för att se alla dagar): ");
-            String val = scanner.nextLine();
-
-            // Om användaren skriver "alla", skriv ut alla veckodagar
-            if (val.equalsIgnoreCase("alla")) {
-                List<String> allaDagar = Arrays.asList("Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag", "Söndag");
-                for (String dag : allaDagar) {
-                    System.out.println(dag);
-                }
-            } else {
-                // Försöker tolka användarens inmatning som ett nummer
-                try {
-                    int dag = Integer.parseInt(val);
-                    String dagNamn;
-
-                    // Väljer rätt dag baserat på siffran
-                    switch (dag) {
-                        case 1: dagNamn = "Måndag"; break;
-                        case 2: dagNamn = "Tisdag"; break;
-                        case 3: dagNamn = "Onsdag"; break;
-                        case 4: dagNamn = "Torsdag"; break;
-                        case 5: dagNamn = "Fredag"; break;
-                        case 6: dagNamn = "Lördag"; break;
-                        case 7: dagNamn = "Söndag"; break;
-                        default: dagNamn = "Ogiltigt nummer";
-                    }
-
-                    // Skriver ut vald veckodag
-                    System.out.println(dagNamn);
-
-                } catch (NumberFormatException e) {
-                    // Om användaren inte skrev ett giltigt nummer
-                    System.out.println("Fel: Du skrev inte ett giltigt nummer eller 'alla'.");
-                }
-            }
+        // Använder en switch-sats för att välja dag
+        String veckodag;
+        switch (dag) {
+            case 1: veckodag = "Måndag"; break;
+            case 2: veckodag = "Tisdag"; break;
+            case 3: veckodag = "Onsdag"; break;
+            case 4: veckodag = "Torsdag"; break;
+            case 5: veckodag = "Fredag"; break;
+            case 6: veckodag = "Lördag"; break;
+            case 7: veckodag = "Söndag"; break;
+            default: veckodag = "Ogiltigt nummer"; // Om man skriver t.ex. 10
         }
 
-        // Skapar en lista för att spara namn
-        List<String> namnLista = new ArrayList<>();
-
-        // Låter användaren skriva in flera namn tills "klar" eller tomt
-        while (true) {
-            System.out.print("Skriv ett namn (eller skriv 'klar' eller tryck Enter för att avsluta): ");
-            String input = scanner.nextLine();
-
-            // Avslutar om användaren skriver "klar" eller trycker Enter utan text
-            if (input.equalsIgnoreCase("klar") || input.isEmpty()) {
-                break;
-            }
-
-            // Lägger till namnet i listan
-            namnLista.add(input);
-        }
-
-        // Skriver ut hälsning för varje namn i listan
-        for (String n : namnLista) {
-            System.out.println("Hej " + n);
-        }
+        // Skriver ut resultatet
+        System.out.println("Du valde: " + veckodag);
 
         // Stänger scannern
         scanner.close();

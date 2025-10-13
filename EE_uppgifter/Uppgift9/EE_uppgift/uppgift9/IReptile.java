@@ -1,9 +1,11 @@
-package EE_uppgift.uppgift8;
+package EE_uppgift.uppgift9;
 
 /**
- * IReptile representerar alla reptiler och ärver från IAnimal.
+ * IReptile representerar reptiler.
+ * Endast Snake och Lizard får implementera detta interface.
  */
-public sealed interface IReptile extends IAnimal permits Snake {
+public sealed interface IReptile extends IAnimal permits Snake, Lizard {
 
-    // Här kan vi lägga till reptil-specifika metoder i framtiden
+    // Alla reptiler ska kunna presentera sig
+    void introduce();
 }
