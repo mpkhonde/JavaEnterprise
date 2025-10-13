@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Studenthantering</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<h1> Studenthanteringssystem</h1>
+<p>Här kan du testa att hämta, lägga till och ta bort studenter via API:et.</p>
+
+<!-- Hämta en student -->
+<section>
+    <h2> Hämta student</h2>
+    <input type="number" id="studentId" placeholder="Ange student-ID">
+    <button onclick="hamtaStudent()">Hämta student</button>
+</section>
+
+<!-- Skapa ny student -->
+<section>
+    <h2> Lägg till ny student</h2>
+    <input type="text" id="newStudentName" placeholder="Ange namn">
+    <button onclick="skapaStudent()">Spara student</button>
+</section>
+
+<!-- Radera student -->
+<section>
+    <h2> Radera student</h2>
+    <input type="number" id="deleteStudentId" placeholder="Ange student-ID">
+    <button onclick="raderaStudent()">Radera</button>
+</section>
+
+<!-- Visa alla studenter -->
+<section>
+    <h2> Alla studenter</h2>
+    <ul id="studentList"></ul>
+</section>
+
+<!-- Resultatmeddelanden -->
+<p id="result"></p>
+
+<!-- Länk till JavaScript -->
+<script src="/script.js"></script>
+</body>
+</html>
