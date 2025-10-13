@@ -1,0 +1,27 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Compiled output
+/out/
+target/
+build/
+
+# OS-filer
+.DS_Store
+Thumbs.db
+
+# Logs och temporära filer
+*.log
+*.tmp
+
+# Editor-specifika
+/shelf/
+/workspace.xml
+
+# Editor-based HTTP Client requests
+/httpRequests/
+
+# Datasource local storage
+/dataSources/
+/dataSources.local.xml
